@@ -1,0 +1,62 @@
+// header
+header {
+    width: 100%;
+    height: 100px;
+    min-width: $min-width;
+    background-color: white;
+    div {
+        width: $min-width;
+        height: 100px;
+        margin: 0 auto;
+        // logo
+        a {
+            width: 125px;
+            height: 100px;
+            text-indent: -9999px;
+            float: left;
+            background: {
+                image: url(../img/zh1.png);
+                position: -308px -57px;
+                repeat: no-repeat;
+            }
+        }
+        section {
+            width: 304px;
+            height: 100px;
+            float: right;
+            background: {
+                image: url(../img/zh1.png);
+                repeat: no-repeat;
+            }
+        }
+    }
+}
+
+// main
+#main-ckg {
+    width: 100%;
+    height: 650px;
+    min-width: $min-width;
+    background: url(../img/ckg.jpg) no-repeat center top;
+    .main {
+        width: $min-width;
+        margin: 0 auto;
+        padding: 50px 0;
+        // 框
+        section {
+            width: 360px;
+            background-color: white;
+            float: right;
+        }
+    }
+}
+
+footer {
+    width: $min-width;
+    height: 78px;
+    line-height: 78px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}

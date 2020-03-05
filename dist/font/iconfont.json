@@ -1,0 +1,23 @@
+{
+  "id": "1672628",
+  "name": "唯品会",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3695321",
+      "name": "正确",
+      "font_class": "zhengque",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "10344650",
+      "name": "错误",
+      "font_class": "cuowu",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    }
+  ]
+}
