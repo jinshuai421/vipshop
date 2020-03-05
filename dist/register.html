@@ -23,56 +23,63 @@
     <!-- main -->
     <div id="main-ckg">
         <div class="main">
+            <!-- 注册 -->
             <section>
-                <div>
+                <div class="ckg-header">
                     <h2>会员注册</h2>
                     <p>已注册可<a href="login.html">直接登录</a></p>
                 </div>
-                <div>
+                <div class="ckg-main">
                     <form action="" name="" method="">
                         <div>
-                            <div class="call">
+                            <div class="ckg-box">
                                 <i></i>
-                                <input type="text">
+                                <input type="text" placeholder="请输入手机号码">
                                 <span class="iconfont icon-zhengque"></span>
                                 <span class="iconfont icon-cuowu"></span>
                             </div>
-                            <!-- <span>请输入正确的手机号码</span> -->
+                            <span>请输入正确的手机号码</span>
                         </div>
                         <div>
-                            <div class="call-code">
-                                <i></i>
-                                <input type="text" class="code">
+                            <div class="ckg-box ckg-code">
+                                <i class="ckg-fontb"></i>
+                                <input type="text" class="code" placeholder="请输入验证码">
                                 <span class="iconfont icon-zhengque"></span>
                                 <span class="iconfont icon-cuowu"></span>
                             </div>
-                            <input type="button" value="获取验证码">
-                            <!-- <span>请输入6位数字手机验证码</span> -->
+                            <!-- 验证码按钮  .btn-code-off未开启按钮时   .btn-code-on开启按钮时-->
+                            <button type="button" class="btn-code-off">获取验证码</button>
+                            <span>请输入6位数字手机验证码</span>
                         </div>
                         <div>
+                            <div class="ckg-box">
+                                <i class="ckg-fontc"></i>
+                                <input type="text" placeholder="密码由6-20位字母，数字和符号组合">
+                                <span class="iconfont icon-zhengque"></span>
+                                <span class="iconfont icon-cuowu"></span>
+                            </div>
+                            <aside></aside><span>密码中包含非法字符</span>
+                        </div>
+                        <div>
+                            <div class="ckg-box">
+                                <i class="ckg-fontd"></i>
+                                <input type="text" placeholder="请再次输入上面的密码">
+                                <span class="iconfont icon-zhengque"></span>
+                                <span class="iconfont icon-cuowu"></span>
+                            </div>
+                            <span>请输入确认密码</span>
+                        </div>
+                        <!-- 条款 -->
+                        <div class="clause">
                             <div>
-                                <i></i>
-                                <input type="text">
-                                <span class="iconfont icon-zhengque"></span>
-                                <span class="iconfont icon-cuowu"></span>
+                                <i class="cla-checkbox"></i><span>我已阅读并接受以下条款：</span>
+                                <a href="https://viva.vip.com/act/supportClause-pc?wapid=vivac_802&ff=125|2|1|12">《唯品会服务条款》</a>
+                                <a href="https://viva.vip.com/act/supportPrivacy-pc?wapid=vivac_804">《隐私条款》</a>
+                                <a href="https://i.vpal.com/clause.html">《唯品支付用户服务协议》</a>
                             </div>
-                            <!-- <aside></aside><span>密码中包含非法字符</span> -->
+                            <span>接受服务条款才能注册</span>
                         </div>
-                        <div>
-                            <div>
-                                <i></i>
-                                <input type="text">
-                                <span class="iconfont icon-zhengque"></span>
-                                <span class="iconfont icon-cuowu"></span>
-                            </div>
-                            <!-- <span>请输入确认密码</span> -->
-                        </div>
-                        <div>
-                            <input type="checked"><span>我已阅读并接受以下条款：</span>
-                            <a href="https://viva.vip.com/act/supportClause-pc?wapid=vivac_802&ff=125|2|1|12">《唯品会服务条款》</a>
-                            <a href="https://viva.vip.com/act/supportPrivacy-pc?wapid=vivac_804">《隐私条款》</a>
-                            <a href="https://i.vpal.com/clause.html">《唯品支付用户服务协议》</a>
-                        </div>
+                        <!-- 注册按钮 -->
                         <button>立即注册</button>
                     </form>
                 </div>
