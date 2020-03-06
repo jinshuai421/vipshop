@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "11487571",
+      "name": "向上",
+      "font_class": "up2",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "12054616",
+      "name": "向上",
+      "font_class": "up21",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
       "icon_id": "3695321",
       "name": "正确",
       "font_class": "zhengque",
