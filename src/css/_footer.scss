@@ -1,0 +1,173 @@
+footer {
+    $color-p: #4d4d4d;
+    $color-li: #808080;
+    width: 100%;
+    min-width: $min-width;
+    border-top: 1px solid #ebebeb;
+    background-color: #fcfcfc;
+    overflow: hidden;
+    #footer {
+        width: 960px;
+        margin: 0 auto;
+        overflow: hidden;
+        >ul {
+            overflow: hidden;
+            >li {
+                width: 12.5%;
+                float: left;
+                line-height: 22px;
+                >i {
+                    height: 75px;
+                    display: block;
+                    font-size: 0;
+                    margin: 30px 38px 0 10px;
+                    @include background(url(../img/footer-zh1.png));
+                }
+                >.footer-v-icon2 {
+                    background-position: -123px 0;
+                }
+                >.footer-v-icon3 {
+                    background-position: -245px 0;
+                }
+                >.footer-v-icon4 {
+                    background-position: -369px 0;
+                }
+                >.footer-v-icon5 {
+                    background-position: -492px 0;
+                }
+                >.footer-v-icon6 {
+                    background-position: -615px 0;
+                }
+                >.footer-v-icon7 {
+                    background-position: -738px 0;
+                }
+                >.footer-v-icon8 {
+                    background-position: -859px 0;
+                }
+            }
+        }
+        .footer-nav {
+            width: 100%;
+            overflow: hidden;
+            margin: 37px 0 25px;
+            color: $color-p;
+            ul {
+                float: left;
+                width: 162px;
+                height: 146px;
+                padding-left: 16px;
+                line-height: 20px;
+                border-right: 1px solid #e0e0e0;
+                p {
+                    margin-bottom: 4px;
+                }
+                li {
+                    padding-left: 8px;
+                    position: relative;
+                    transition: transform ease-out .2s;
+                    &::before {
+                        width: 8px;
+                        height: 20px;
+                        content: '';
+                        display: block;
+                        @include background(url(../img/footer-zh2.png), -6px, -494px);
+                        position: absolute;
+                        left: 0;
+                    }
+                    a {
+                        color: $color-li;
+                        &:hover {
+                            color: $color;
+                        }
+                    }
+                    &:hover {
+                        &::before {
+                            background-position: -6px -513px;
+                        }
+                        transform: translateX(2px);
+                    }
+                }
+            }
+            div {
+                width: 150px;
+                float: left;
+                text-align: center;
+                line-height: 20px;
+                p {
+                    margin-bottom: 4px;
+                }
+                img {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+        .footer-footer {
+            text-align: center;
+            .footer-txt {
+                height: 30px;
+                line-height: 30px;
+                background-color: #d7237e;
+                color: #fff;
+                a {
+                    font-size: 12px;
+                    color: #fff;
+                    margin: 0 2px;
+                    &:hover {
+                        color: #ccc;
+                    }
+                }
+            }
+            .footer-li {
+                margin: 14px 0;
+                color: #999;
+                line-height: 20px;
+                >a {
+                    color: $color-li;
+                    &:hover {
+                        color: $color;
+                    }
+                    img {
+                        vertical-align: text-bottom;
+                    }
+                }
+            }
+            .footer-ig {
+                height: 40px;
+                a {
+                    height: 40px;
+                    margin-left: 10px;
+                    display: inline-block;
+                    @include background(url(../img/footer-zh2.png));
+                }
+                .footer-ig1 {
+                    width: 105px;
+                }
+                .footer-ig2 {
+                    width: 99px;
+                    background-position: 0 -150px;
+                }
+                .footer-ig3 {
+                    width: 66px;
+                    background-position: 0 -200px;
+                }
+                .footer-ig4 {
+                    width: 70px;
+                    background-position: 0 -250px;
+                }
+                .footer-ig5 {
+                    width: 75px;
+                    background-position: 0 -300px;
+                }
+                .footer-ig6 {
+                    width: 76px;
+                    background-position: 0 -350px;
+                }
+                .footer-ig7 {
+                    width: 76px;
+                    background-position: 0 -400px;
+                }
+            }
+        }
+    }
+}
