@@ -1,0 +1,16 @@
+$min-width:1170px;
+$border-radius: 3px;
+$color: #f10180;
+$background-color: #fa2a83;
+$transition: border-color .3s cubic-bezier(.39, .575, .565, 1),
+background-color .3s cubic-bezier(.39, .575, .565, 1);
+@mixin background($url, $x: 0, $y: 0, $repeat: no-repeat) {
+    background: {
+        image: $url;
+        repeat: $repeat;
+        position: $x $y;
+    }
+}
+
+@import "header.scss";
+@import "footer.scss";
