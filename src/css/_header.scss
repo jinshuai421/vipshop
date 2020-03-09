@@ -640,16 +640,28 @@
                     &:hover {
                         color: $color;
                     }
+                    >img {
+                        vertical-align: middle;
+                        margin-top: -3px;
+                        margin-right: 2px;
+                    }
                 }
             }
             .nav-atag {
                 width: 81px;
                 padding: 0;
+                position: relative;
                 ul {
+                    width: 81px;
                     display: none;
+                    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .06);
                     background-color: #fff;
-                    font-weight: 400;
+                    position: absolute;
+                    right: 0;
+                    top: 42px;
                     overflow: hidden;
+                    font-size: 16px;
+                    z-index: 5;
                     li {
                         height: 43px;
                         padding: 0;

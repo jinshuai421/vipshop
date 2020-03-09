@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const connect = require('gulp-connect');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
+const babel = require("gulp-babel");
 
 // 搭建服务器
 gulp.task('server', done => {
@@ -29,10 +30,16 @@ gulp.task('sass', done => {
     done();
 });
 // js
-gulp.task('js', done => {
+gulp.task('babel', done => {
     gulp.src('src/js/*.js')
+        .pipe(babel({ presets: ['@babel/env'] }))
         .pipe(gulp.dest('dist/js'))
         .pipe(connect.reload());
+    done();
+});
+gulp.task('libs', done => {
+    gulp.src('src/libs/*.js')
+        .pipe(gulp.dest('dist/libs'))
     done();
 });
 // img
@@ -51,7 +58,10 @@ gulp.task('font', done => {
 gulp.task('watch', done => {
     gulp.watch('src/*.html', gulp.series('html'));
     gulp.watch('src/css/*.scss', gulp.series('sass'));
-    gulp.watch('src/js/*.js', gulp.series('js'));
+    gulp.watch('src/babel/*.js', gulp.series('babel'));
+    gulp.watch('src/libs/*.js', gulp.series('libs'));
+    gulp.watch('src/img/**', gulp.series('img'));
+    gulp.watch('src/font/**', gulp.series('font'));
     done();
 });
 
