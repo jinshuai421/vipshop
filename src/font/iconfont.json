@@ -6,11 +6,25 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "301832",
-      "name": "我的足迹",
-      "font_class": "wodezuji",
-      "unicode": "e64f",
-      "unicode_decimal": 58959
+      "icon_id": "2350355",
+      "name": "历史",
+      "font_class": "lishi",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "2137389",
+      "name": "币",
+      "font_class": "bi",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "2159090",
+      "name": "我的订单",
+      "font_class": "dingdan",
+      "unicode": "e611",
+      "unicode_decimal": 58897
     },
     {
       "icon_id": "455414",

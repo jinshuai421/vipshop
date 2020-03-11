@@ -594,11 +594,25 @@
                 }
             }
         }
-        // 菜单
+    }
+    // 菜单
+    .fixedtrans {
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        transition: .3s linear;
+        box-shadow: 0 1px 3px 0 #a7a7a7;
+    }
+    .menus {
+        width: 100%;
+        min-width: $min-width;
+        height: 43px;
+        background-color: #fff;
         nav {
             width: $min-width;
             height: 43px;
             margin: 0 auto;
+            position: relative;
             .main-li {
                 cursor: pointer;
                 width: 156px;
@@ -614,7 +628,107 @@
                     vertical-align: middle;
                     margin-right: 1px;
                     margin-top: -3px;
-                    @include background(url(../img/index_zh1.png), )
+                    @include background(url(../img/index_zh1.png));
+                }
+                &:hover {
+                    .cate-menu {
+                        height: 495px;
+                    }
+                }
+                >div {
+                    position: absolute;
+                    left: 0;
+                    z-index: 15;
+                    .cate-menu {
+                        background-color: #f10180;
+                        transition: height .2s linear;
+                        z-index: 15;
+                        height: 0;
+                        overflow: hidden;
+                        >li {
+                            width: 156px;
+                            height: 45px;
+                            font-size: 12px;
+                            line-height: 45px;
+                            &:hover {
+                                background-color: #fff;
+                                >span {
+                                    color: $color;
+                                }
+                            }
+                            &:hover {
+                                .cate-part {
+                                    display: block;
+                                }
+                            }
+                            .cate-part {
+                                display: none;
+                                position: absolute;
+                                width: 1014px;
+                                height: 495px;
+                                background-color: #fff;
+                                z-index: 15;
+                                left: 156px;
+                                overflow: hidden;
+                                top: -1px;
+                                box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, .1);
+                                .cate-col1 {
+                                    width: 769px;
+                                    height: 100%;
+                                    padding: 16px 40px;
+                                    float: left;
+                                    dl {
+                                        width: 100%;
+                                        margin-bottom: 24px;
+                                        dt {
+                                            float: left;
+                                            >span {
+                                                overflow: hidden;
+                                                display: block;
+                                                color: #222;
+                                                text-align: left;
+                                                float: left;
+                                                line-height: 22px;
+                                                &:first-of-type {
+                                                    font-weight: 700;
+                                                    width: 72px;
+                                                    text-overflow: ellipsis;
+                                                    white-space: nowrap;
+                                                }
+                                                &:last-of-type {
+                                                    font-size: 12px;
+                                                    margin-top: 3px;
+                                                }
+                                            }
+                                        }
+                                        dd {
+                                            margin-left: 95px;
+                                            line-height: 22px;
+                                            text-align: left;
+                                            a {
+                                                font-size: 12px;
+                                                margin-right: 10px;
+                                                color: #666;
+                                                &:hover {
+                                                    color: $color;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .cate-col2 {
+                                    width: 245px;
+                                    height: 100%;
+                                    float: right;
+                                    background: {
+                                        image: url(../img/cd.png);
+                                        repeat: no-repeat;
+                                        size: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             >li {
@@ -679,6 +793,229 @@
                         display: block;
                     }
                 }
+            }
+        }
+    }
+}
+
+#sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 36px;
+    height: 100%;
+    z-index: 333;
+    background-color: #262626;
+    .sidebar-icon {
+        text-align: center;
+        color: #fff;
+        >div:not(.shopping):hover {
+            background-color: #df147f;
+            >a {
+                left: -117px;
+            }
+        }
+        .rests {
+            width: 36px;
+            height: 36px;
+            margin-bottom: 2px;
+            cursor: pointer;
+            position: relative;
+            background-color: #262626;
+            >span {
+                font-size: 24px;
+                line-height: 36px;
+                color: #fff;
+                width: 36px;
+                height: 36px;
+            }
+            >a {
+                position: absolute;
+                top: 0;
+                left: 36px;
+                transition: .2s linear;
+                z-index: -1;
+                display: block;
+                width: 117px;
+                height: 36px;
+                padding: 0 8px;
+                line-height: 36px;
+                text-align: center;
+                border-radius: 3px 0 0 3px;
+                background-color: #fff;
+                border: 1px solid #ddd;
+            }
+        }
+    }
+    .sidebar-icon1 {
+        margin-top: -250px;
+        height: 400px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        background-color: #262626;
+        .user {
+            padding: 8px 0 6px;
+            font-size: 12px;
+            color: #fff;
+            position: relative;
+            span {
+                font-size: 26px;
+            }
+            p {
+                margin-top: 3px;
+            }
+            &:hover {
+                >div {
+                    left: -275px;
+                }
+            }
+            >div {
+                position: absolute;
+                top: 0;
+                width: 275px;
+                padding: 0 14px;
+                background-color: #fff;
+                border: 1px solid #cecece;
+                transition: .2s linear;
+                z-index: -2;
+                left: 36px;
+                >i {
+                    float: right;
+                    margin-top: 15px;
+                    width: 18px;
+                    height: 14px;
+                    background: url(../img/index_zh2.png) no-repeat;
+                    background-position: -139px -173px;
+                    cursor: pointer;
+                    &:hover {
+                        background-position: -121px -173px;
+                    }
+                }
+                >img {
+                    display: block;
+                    margin: 30px auto 20px;
+                    width: 66px;
+                    height: 66px;
+                    padding: 4px;
+                    border-radius: 66px;
+                    background-color: #fff;
+                    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .11);
+                }
+                >p {
+                    color: #333;
+                    font-size: 12px;
+                    line-height: 18px;
+                    margin-bottom: 20px;
+                    >a {
+                        color: $color;
+                        margin-left: 5px;
+                    }
+                }
+                >div {
+                    clear: both;
+                    overflow: hidden;
+                    margin: 0 -14px;
+                    width: 274px;
+                    padding: 14px 0;
+                    border-top: 1px solid #e5e5e5;
+                    border-bottom: 1px solid #e5e5e5;
+                    background-color: #f8f8f8;
+                    >a {
+                        float: left;
+                        position: relative;
+                        width: 135px;
+                        height: 66px;
+                        padding-top: 10px;
+                        text-align: center;
+                        font-size: 9px;
+                        >i {
+                            width: 26px;
+                            height: 26px;
+                            margin-bottom: 10px;
+                            margin: 0 auto;
+                            display: block;
+                            background: url(../img/index_zh2.png) no-repeat;
+                            margin-bottom: 10px;
+                        }
+                        &:first-of-type {
+                            width: 136px;
+                            border-right: 1px solid #e5e5e5;
+                            >i {
+                                background-position: -200px -120px;
+                            }
+                        }
+                        &:last-of-type {
+                            >i {
+                                background-position: -200px -60px;
+                            }
+                        }
+                        &:hover {
+                            color: $color;
+                            &:first-of-type {
+                                >i {
+                                    background-position: -200px -30px;
+                                }
+                            }
+                            &:last-of-type {
+                                >i {
+                                    background-position: 0 -173px;
+                                }
+                            }
+                        }
+                    }
+                }
+                >a {
+                    padding: 12px;
+                    line-height: 20px;
+                    text-align: right;
+                    display: block;
+                    color: #20a0cd;
+                }
+            }
+        }
+    }
+    .shopping {
+        background-color: #df147f;
+        color: #fff;
+        margin-bottom: 5px;
+        cursor: pointer;
+        width: 36px;
+        padding: 20px 0;
+        span {
+            font-size: 26px;
+        }
+        p {
+            margin: 5px auto;
+            width: 14px;
+            line-height: 18px;
+            font-size: 14px;
+        }
+        i {
+            width: 20px;
+            height: 20px;
+            display: block;
+            margin: 7px auto -2px;
+            background-color: #fff;
+            color: $color;
+            line-height: 20px;
+            text-align: center;
+            font-size: 12px;
+            border-radius: 50%;
+        }
+    }
+}
+
+.sidebar-icon2 {
+    position: absolute;
+    bottom: 6px;
+    .rests {
+        >span {
+            color: #ccc;
+        }
+        &:hover {
+            span {
+                color: #fff;
             }
         }
     }

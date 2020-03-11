@@ -1,0 +1,194 @@
+$min-width:1000px;
+$border-radius: 3px;
+$color: #f10180;
+$background-color: #fa2a83;
+$transition: border-color .3s cubic-bezier(.39, .575, .565, 1),
+background-color .3s cubic-bezier(.39, .575, .565, 1);
+@mixin background($url, $x: 0, $y: 0, $repeat: no-repeat) {
+    background: {
+        image: $url;
+        repeat: $repeat;
+        position: $x $y;
+    }
+}
+
+@import "header.scss";
+@import "footer.scss";
+#header-nav header #header .search {
+    width: 391px;
+    form input {
+        width: 335px;
+    }
+}
+
+#header-nav .menus nav>li {
+    padding: 0 9px;
+}
+
+#main {
+    width: 100%;
+    min-width: $min-width;
+    overflow: hidden;
+    .main {
+        width: $min-width;
+        margin-bottom: 40px;
+        padding-top: 22px;
+        margin: 0 auto;
+        .fw-l {
+            width: 420px;
+            float: left;
+            >img {
+                width: 420px;
+                height: 420px;
+                background-position: center;
+            }
+            .pic-slider {
+                margin-top: 4px;
+                >img {
+                    width: 64px;
+                    height: 64px;
+                    margin-right: 4px;
+                    border: 1px solid transparent;
+                    &:hover {
+                        border-color: #f10180;
+                    }
+                    &:last-of-type {
+                        margin-right: 0px;
+                    }
+                }
+            }
+            .txt {
+                line-height: 20px;
+                color: #999;
+                padding: 12px 0;
+                font-size: 12px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                border-bottom: 1px #e2e2e2 dashed;
+                p {
+                    float: left;
+                }
+                >span:last-of-type {
+                    padding: 0 9px;
+                    height: 24px;
+                    line-height: 24px;
+                    float: right;
+                    display: block;
+                    border: solid 1px #c2c2c2;
+                    border-radius: 2px;
+                    text-align: center;
+                    background: #fafafa;
+                    cursor: pointer;
+                    i {
+                        display: inline-block;
+                        width: 15px;
+                        height: 12px;
+                        margin-right: 2px;
+                        background: url(../img/detail-zh2.png) no-repeat;
+                        background-position: -16px -19px;
+                    }
+                    position: relative;
+                    &::after {
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        display: inline-block;
+                        position: absolute;
+                        border: solid 3px transparent;
+                        _border-color: #fff;
+                        border-top-color: #999;
+                        margin-left: 2px;
+                        top: 10px;
+                        right: 5px;
+                    }
+                }
+            }
+            .pz {
+                padding: 15px 0;
+                overflow: hidden;
+                position: relative;
+                width: 420px;
+            }
+        }
+        .fw-r {
+            float: left;
+            padding-left: 30px;
+            >a {
+                color: #007cff;
+                width: 340px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                display: block;
+                font-size: 16px;
+                cursor: pointer;
+                line-height: 22px;
+                min-height: 22px;
+                &:hover {
+                    cursor: $color;
+                }
+            }
+            h3 {
+                font-size: 16px;
+                color: #333;
+                max-height: 40px;
+                overflow: hidden;
+                line-height: 20px;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                font-weight: 700;
+            }
+            >p {
+                color: #fff;
+                width: 550px;
+                height: 45px;
+                line-height: 45px;
+                background-color: #f76568;
+                font-size: 16px;
+                padding-left: 20px;
+                >span {
+                    float: right;
+                    width: auto;
+                    height: 28px;
+                    line-height: 28px;
+                    text-align: center;
+                    margin-right: 17px;
+                    margin-top: 8px;
+                    padding: 0 16px;
+                    border-radius: 3px;
+                    border: solid 1px #fff;
+                }
+            }
+            .price-box {
+                width: 100%;
+                background: #f9f9f9;
+                margin-bottom: 20px;
+                font-size: 20px;
+                color: #333;
+                line-height: 1.2;
+                padding-left: 20px;
+                overflow: hidden;
+                i {
+                    float: left;
+                    margin-top: 37px;
+                }
+                p {
+                    float: left;
+                    font-weight: 400;
+                    font-size: 48px;
+                    margin-top: 10px;
+                }
+                >div {
+                    color: #999;
+                    font-size: 16px;
+                    margin-top: 37px;
+                    del {
+                        text-decoration: line-through;
+                        margin: 0 12px;
+                    }
+                }
+            }
+        }
+    }
+}
