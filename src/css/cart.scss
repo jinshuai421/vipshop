@@ -1,0 +1,490 @@
+$min-width:960px;
+$border-radius: 3px;
+$color: #f10180;
+$background-color: #fa2a83;
+$transition: border-color .3s cubic-bezier(.39, .575, .565, 1),
+background-color .3s cubic-bezier(.39, .575, .565, 1);
+@mixin background($url, $x: 0, $y: 0, $repeat: no-repeat) {
+    background: {
+        image: $url;
+        repeat: $repeat;
+        position: $x $y;
+    }
+}
+
+@import "footer.scss";
+header {
+    width: 100%;
+    min-width: $min-width;
+    height: 80px;
+    border-bottom: 2px solid #f3168a;
+    background-color: #fff;
+    margin-bottom: 30px;
+    #header {
+        width: $min-width;
+        margin: 0 auto;
+        height: 100%;
+        position: relative;
+        >a {
+            float: left;
+            padding: 16px 0 12px;
+            display: block;
+            overflow: hidden;
+        }
+        >div {
+            float: right;
+            nav {
+                padding-top: 10px;
+                padding-right: 5px;
+                height: 18px;
+                color: grey;
+                line-height: 26px;
+                li {
+                    float: left;
+                    margin: 0 12px;
+                    a {
+                        color: grey;
+                    }
+                    p {
+                        >a:last-of-type {
+                            background: url(../img/cart-zh1.png) no-repeat;
+                            background-position: -372px -253px;
+                            width: 26px;
+                            height: 26px;
+                            display: inline-block;
+                            vertical-align: top;
+                            margin-left: 2px;
+                        }
+                    }
+                    span {
+                        span {
+                            font-size: 12px;
+                        }
+                    }
+                    .icf {
+                        color: #b5b5b5;
+                        float: left;
+                        margin-right: 3px;
+                    }
+                    &:nth-last-of-type(1),
+                    &:nth-last-of-type(2) {
+                        cursor: pointer;
+                    }
+                }
+                >span {
+                    float: left;
+                }
+            }
+        }
+        ul {
+            height: 20px;
+            position: absolute;
+            right: 30px;
+            bottom: 14px;
+            li {
+                float: left;
+                margin-left: 25px;
+                white-space: nowrap;
+                line-height: 20px;
+                i {
+                    background-image: url(../img/cart-zh1.png);
+                    background-position: -432px -253px;
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-right: 12px;
+                }
+            }
+        }
+    }
+}
+
+#main {
+    width: $min-width;
+    overflow: hidden;
+    margin: 0 auto;
+    .step {
+        width: 610px;
+        margin: 0 175px 30px;
+        overflow: hidden;
+        .step-line {
+            width: 152px;
+            height: 50px;
+            float: left;
+            background: url(../img/cart-zh1.png);
+            background-position: -306px -145px;
+            &:nth-of-type(4) {
+                background-position: -306px -199px;
+            }
+        }
+        >div {
+            float: left;
+            cursor: pointer;
+            >div {
+                width: 100px;
+                height: 50px;
+                background: url(../img/cart-zh1.png);
+                background-position: -260px -290px;
+            }
+            &:nth-of-type(3)>div {
+                background-position: 0 -344px;
+            }
+            &:nth-of-type(5)>div {
+                background-position: -462px -199px;
+            }
+            P {
+                width: 100px;
+                height: 34px;
+                line-height: 34px;
+                text-align: center;
+                font-size: 14px;
+                color: #000;
+            }
+        }
+    }
+    .cart-tab {
+        border-bottom: 1px solid #d0d0d0;
+        font-weight: 700;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        >a {
+            width: 150px;
+            height: 54px;
+            display: block;
+            color: #f10180;
+            padding: 15px 10px;
+            font-size: 16px;
+            border-bottom: 3px solid #f10180;
+        }
+    }
+    .channel-tips {
+        min-width: $min-width;
+        background-color: #fff;
+        margin: 0 auto 30px;
+        font-size: 18px;
+        p {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            float: left;
+        }
+        h3 {
+            max-width: 460px;
+            font-weight: 700;
+            margin-left: 5px;
+            float: left;
+        }
+        em {
+            padding: 0 15px;
+            color: #c4c4c4;
+            font-weight: normal;
+        }
+        span {
+            font-size: 15px;
+            color: #666;
+            margin-right: 12px;
+            &:last-of-type {
+                color: #2689f8;
+            }
+        }
+    }
+    .container {
+        width: $min-width;
+        margin: 0 auto;
+        overflow: hidden;
+        .orders-hd {
+            width: 100%;
+            background-color: #f9f9f9;
+            height: 40px;
+            border-left: 2px solid #f10180;
+            ul {
+                width: 100%;
+                height: 100%;
+                border: 1px solid #e0e0e0;
+                border-left: none;
+                line-height: 38px;
+                li {
+                    color: #333;
+                    font-size: 16px;
+                    float: left;
+                    font-size: 12px;
+                    &:first-of-type {
+                        padding-left: 14px;
+                        width: 333px;
+                        color: #f10180;
+                        font-size: 16px;
+                    }
+                    &:nth-of-type(2) {
+                        width: 250px;
+                        text-align: center;
+                    }
+                    &:nth-of-type(3) {
+                        width: 100px;
+                        text-align: center;
+                    }
+                    &:nth-of-type(4) {
+                        width: 145px;
+                        text-align: center;
+                    }
+                    &:nth-of-type(5) {
+                        width: 115px;
+                        text-align: center;
+                        padding-right: 15px;
+                    }
+                }
+            }
+        }
+        .orders-bd {
+            width: 100%;
+            border: 1px solid #e0e0e0;
+            border-top: none;
+            overflow: hidden;
+            padding-bottom: 20px;
+            .product-item {
+                margin-right: auto;
+                margin-left: auto;
+                padding-top: 5px;
+                width: 928px;
+                .m-product {
+                    float: left;
+                    padding-top: 15px;
+                    height: 91px;
+                    width: 318px;
+                    padding-left: 10px;
+                    img {
+                        width: 58px;
+                        height: 74px;
+                        float: left;
+                        margin-right: 12px;
+                    }
+                    >div {
+                        width: 180px;
+                        margin-bottom: 10px;
+                        overflow: hidden;
+                        >span {
+                            color: #f10180;
+                            margin-right: 5px;
+                            padding-right: 5px;
+                            height: 10px;
+                            line-height: 10px;
+                            border-right: 1px solid #d0d0d0;
+                        }
+                    }
+                }
+                .m-price {
+                    width: 250px;
+                    text-align: center;
+                    padding-top: 15px;
+                    height: 91px;
+                    float: left;
+                    line-height: 20px;
+                    span {
+                        display: block;
+                        color: #333;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    del {
+                        color: #999;
+                        text-decoration: line-through;
+                    }
+                }
+                >p {
+                    width: 73px;
+                    height: 24px;
+                    margin: 0 15px;
+                    margin-top: 15px;
+                    border: 1px solid #e3e2e2;
+                    color: #333;
+                    text-align: center;
+                    background-color: #fff;
+                    float: left;
+                    line-height: 22px;
+                    >i {
+                        width: 21px;
+                        height: 100%;
+                        display: inline-block;
+                        color: #7d7c7c;
+                        background-color: #f9f8f8;
+                        font-size: 21px;
+                        cursor: pointer;
+                        &:first-of-type {
+                            float: left;
+                        }
+                        &:last-of-type {
+                            float: right;
+                        }
+                    }
+                    >em {
+                        width: 29px;
+                        font-size: 12px;
+                        border-left: 1px solid #e4e3e3;
+                        border-right: 1px solid #e4e3e3;
+                        overflow: hidden;
+                        display: inline-block;
+                        font-weight: 500;
+                    }
+                    .ion {
+                        background-color: #f9f8f8;
+                        color: #dad8d8;
+                    }
+                }
+                .add {
+                    color: #f10180;
+                    width: 145px;
+                    font-size: 14px;
+                    text-align: center;
+                    padding-top: 15px;
+                    height: 91px;
+                    float: left;
+                    line-height: 20px;
+                }
+                >a {
+                    width: 100px;
+                    text-align: center;
+                    display: block;
+                    padding-top: 15px;
+                    float: left;
+                }
+            }
+        }
+        .orders-ft {
+            padding: 14px 15px 4px;
+            border: 1px solid #e0e0e0;
+            border-top: none;
+            >div {
+                margin-bottom: 10px;
+                color: #666;
+                line-height: 20px;
+                font-size: 12px;
+                span {
+                    background-color: #f93;
+                    margin-right: 10px;
+                    width: 42px;
+                    height: 20px;
+                    display: inline-block;
+                    text-align: center;
+                    color: #fff;
+                }
+            }
+        }
+        .orders-total-bd {
+            margin-top: 40px;
+            padding: 18px 20px 15px;
+            min-height: 112px;
+            border: 1px solid #e0e0e0;
+            border-bottom: none;
+            >a {
+                display: inline-block;
+                position: relative;
+                padding-left: 10px;
+                height: 30px;
+                line-height: 30px;
+                color: #f10180;
+                border: 1px solid #f10180;
+                border-radius: 3px;
+                background-color: #fff;
+                font-size: 14px;
+                >span {
+                    font-size: 12px;
+                    margin-left: 20px;
+                    margin-right: 10px;
+                }
+            }
+            >div {
+                float: right;
+                div {
+                    margin-bottom: 5px;
+                    padding-right: 110px;
+                    color: #888;
+                    line-height: 22px;
+                    position: relative;
+                    span {
+                        span {
+                            color: $color;
+                        }
+                    }
+                    em {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        color: #333;
+                        font-size: 14px;
+                        font-weight: normal;
+                    }
+                    b {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        color: #333;
+                        font-size: 18px;
+                        font-weight: normal;
+                        color: $color;
+                    }
+                }
+            }
+        }
+        .orders-total-ft {
+            position: relative;
+            >div {
+                padding: 14px 270px 14px 20px;
+                width: 960px;
+                height: 50px;
+                border: 1px solid #e2e1e1;
+                background-color: #f3f3f3;
+                font-size: 14px;
+                text-align: right;
+                line-height: 21px;
+                span {
+                    float: right;
+                    color: #2689f8;
+                    margin-left: 12px;
+                    margin-right: 15px;
+                }
+            }
+            >a {
+                width: 250px;
+                height: 48px;
+                line-height: 48px;
+                background-color: #f10180;
+                border: 1px solid #f10180;
+                text-align: center;
+                font-size: 18px;
+                color: #fff;
+                position: absolute;
+                top: 1px;
+                right: 1px;
+                border-radius: 0;
+                &:hover {
+                    transition: .3s;
+                    background-color: #f43499;
+                    border-color: #f43499;
+                }
+                >span {
+                    font-size: 14px;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    >ul {
+        width: $min-width;
+        margin: 80px auto;
+        overflow: hidden;
+        li {
+            width: 302px;
+            height: 141px;
+            background-image: url(../img/cart-zh1.png);
+            background-position: -306px 0;
+            float: left;
+            &:nth-of-type(2) {
+                background-position: 0 0;
+                margin: 0 27px;
+            }
+            &:nth-of-type(3) {
+                background-position: 0 -145px;
+            }
+        }
+    }
+}
