@@ -112,7 +112,7 @@
                 </ul>
             </div>
             <div class="orders-bd">
-                <div class="product-item">
+                <!-- <div class="product-item">
                     <div class="m-product">
                         <img src="img/00.jpg" alt="">
                         <div><span>自营</span><a href="JavaScript:;">卫衣女2020春季新款韩版宽松中长款学生无帽圆领百搭打底</a>
@@ -123,10 +123,10 @@
                         <span>¥39</span>
                         <del>¥159</del>
                     </div>
-                    <p><i class="ion">-</i><em>1</em><i>+</i></p>
+                    <p><i class="oMinus">-</i><em class="num">1</em><i class="oAdd">+</i></p>
                     <div class="add">¥ 39</div>
                     <a href="javascript:;">删除</a>
-                </div>
+                </div> -->
             </div>
             <div class="orders-ft">
                 <div><span>运费</span>唯品自营: 唯品自营商品已满足新会员专享首单满38元免邮（限唯品自营商品，部分商品不可用）</div>
@@ -139,11 +139,11 @@
                 </a>
                 <div>
                     <div>
-                        <em>¥68</em>
-                        <span>共<span>1</span>件商品 商品金额</span>
+                        <em class="addup">¥68</em>
+                        <span>共<span class="all">1</span>件商品 商品金额</span>
                     </div>
                     <div>
-                        <b>¥68</b>
+                        <b class="addup">¥68</b>
                         <span>总金额（未含运费）</span>
                     </div>
                 </div>
@@ -153,8 +153,8 @@
                     <span class="iconfont icon-wenhao"></span> 请在倒计时结束前结算
                 </div>
                 <a href="javascript:;">立即结算<span class="cart-tab-item">
-                    <span class="min">17</span>&nbsp;:&nbsp;
-                <span class="sec">29</span>
+                    <span class="min">20</span>&nbsp;:&nbsp;
+                <span class="sec">00</span>
                 </span></a>
             </div>
         </div>
@@ -259,15 +259,119 @@
         </div>
     </footer>
     <script src="libs/jquery-1.11.0.js"></script>
-    <script src="js/cart.js"></script>
     <script>
         $(function() {
+
+
+
+            var tiems = 1200;
+
+            setInterval(function() {
+                // 计时器
+                tiems--;
+                var d = new Date();
+
+                var m = d.getMinutes(); //分钟
+                var s = d.getSeconds();
+
+                var min = Math.floor(tiems % 3600 / 60); //分钟
+                var sec = Math.floor(tiems % 60);
+
+                $('.min').html(min);
+                $('.sec').html(sec);
+            }, 1000);
+
+            function show() {
+                $.get("http://jx.xuzhixiang.top/ap/api/cart-list.php?", {
+                    id: "33169"
+                }).then(data => {
+                    data = data.data;
+                    console.log(data)
+
+                    for (let i in data) {
+                        $('.orders-bd').append(
+                            `
+                        <div class="product-item" ">
+                            <div class="m-product">
+                                <img src="${data[i].pimg}" alt="">
+                                <div><span>自营</span><a href="JavaScript:;">${data[i].pdesc}</a>
+                                </div>
+                                <p>尺码：<span>XL</span></p>
+                            </div>
+                            <div class="m-price">
+                                <span>¥${data[i].pprice}</span>
+                                <del>¥1599</del>
+                            </div>
+                            <p><i class="oMinus"  data-id="${data[i].pid}">-</i><em class="num">${data[i].pnum}</em><i class="oAdd" data-id="${data[i].pid}">+</i></p>
+                            <div class="add">¥<em>${data[i].pprice * data[i].pnum}</em></div>
+                            <a href="javascript:;" class="del" data-id="${data[i].pid}">删除</a>
+                        </div>
+                        `
+                        )
+                        $('.all').html(+i + 1);
+                    }
+                    del();
+                    add();
+                    numadd();
+
+                });
+
+            }
+            let singles = 0;
+
+            function add() {
+                $('.add').each(function(i) {
+                    singles += parseFloat($('.add').eq(i).children('em').html());
+                })
+                $('.addup').html(`¥${singles}`);
+            }
+
+            function numadd() {
+                $('.oMinus').click(function() {
+                    this.num = $(this).siblings('.num').html();
+                    this.num < 2 ? this.num = 1 : this.num--;
+                    $.get("http://jx.xuzhixiang.top/ap/api/cart-update-num.php", {
+                        uid: "33169",
+                        pid: $(this).data('id'),
+                        pnum: this.num
+                    }).then(data => {
+
+                    });
+                    $(this).siblings('.num').html(this.num);
+                    add();
+                })
+                $('.oAdd').click(function() {
+                    this.num = $(this).siblings('.num').html();
+                    this.num++;
+                    $.get("http://jx.xuzhixiang.top/ap/api/cart-update-num.php", {
+                        uid: "33169",
+                        pid: $(this).data('id'),
+                        pnum: this.num
+                    }).then(data => {
+
+                    });
+                    $(this).siblings('.num').html(this.num);
+                    add();
+                })
+            }
+
+            function del() {
+                $('.del').click(function() {
+                    let k = $(this).data('id');
+                    $.get("http://jx.xuzhixiang.top/ap/api/cart-delete.php", {
+                        uid: "33169",
+                        pid: k
+                    }).then(data => {
+                        parent.location.reload()
+                    });
+                })
+            }
             del();
             add();
             show();
+
         })
     </script>
-
 </body>
 
 </html>

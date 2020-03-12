@@ -1,7 +1,5 @@
 $(function() {
 
-
-
     var tiems = 1200;
 
     setInterval(function() {
@@ -104,6 +102,8 @@ $(function() {
             });
         })
     }
-
-
+    show();
+    del();
+    add();
+    numadd();
 })
