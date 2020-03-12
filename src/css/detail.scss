@@ -285,6 +285,7 @@ background-color .3s cubic-bezier(.39, .575, .565, 1);
                             background-color: #f9f8f8;
                             font-size: 21px;
                             cursor: pointer;
+                            user-select: none;
                             &:first-of-type {
                                 float: left;
                             }
@@ -306,10 +307,11 @@ background-color .3s cubic-bezier(.39, .575, .565, 1);
                             color: #dad8d8;
                         }
                     }
-                    >button {
+                    >a {
                         margin: 20px 0px 42px 40px;
                         width: 200px;
                         height: 50px;
+                        display: block;
                         background-color: #f10180;
                         border: 1px solid #f10180;
                         border-radius: 3px;

@@ -213,7 +213,7 @@ background-color .3s cubic-bezier(.39, .575, .565, 1);
             }
         }
         // 登录按钮
-        >button {
+        #btn {
             width: 100%;
             height: 46px;
             background-color: #f10180;
@@ -222,6 +222,7 @@ background-color .3s cubic-bezier(.39, .575, .565, 1);
             border-radius: $border-radius;
             transition: $transition;
             border: none;
+            display: block;
             &:hover {
                 background-color: #f43499;
             }

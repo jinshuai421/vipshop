@@ -159,7 +159,7 @@ background-color .3s cubic-bezier(.39, .575, .565, 1);
             }
         }
         // 注册按钮
-        >button {
+        #btn {
             width: 100%;
             height: 42px;
             background-color: #f10180;
@@ -169,6 +169,8 @@ background-color .3s cubic-bezier(.39, .575, .565, 1);
             margin-bottom: 35px;
             transition: $transition;
             border: none;
+            display: block;
+            cursor: pointer;
             &:hover {
                 background-color: #f43499;
             }

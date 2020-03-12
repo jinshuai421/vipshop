@@ -309,6 +309,7 @@ header {
                         background-color: #f9f8f8;
                         font-size: 21px;
                         cursor: pointer;
+                        user-select: none;
                         &:first-of-type {
                             float: left;
                         }

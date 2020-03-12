@@ -328,6 +328,7 @@ background-color .3s cubic-bezier(.39, .575, .565, 1);
                 img {
                     width: 218px;
                     height: 297px;
+                    display: block;
                 }
                 aside {
                     width: 218px;
@@ -369,7 +370,7 @@ background-color .3s cubic-bezier(.39, .575, .565, 1);
                         text-decoration: line-through;
                     }
                 }
-                >a {
+                >a:last-of-type {
                     width: 218px;
                     height: 36px;
                     overflow: hidden;

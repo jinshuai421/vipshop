@@ -1920,7 +1920,7 @@
         <div class="main">
             <div class="FW-product">
                 <div class="fw-l">
-                    <img src="img/11111.jpg" alt="">
+                    <!-- <img src="img/11111.jpg" alt=""> -->
                     <div class="pic-slider">
                         <img src="img/111112.jpg" alt="">
                         <img src="img/111113.jpg" alt="">
@@ -1937,7 +1937,7 @@
                     </div>
                 </div>
                 <div class="fw-r">
-                    <a href="javascript:;">左岸</a>
+                    <!-- <a href="javascript:;">左岸</a>
                     <h3 title="2020春季新款时尚舒适百搭个性字母休闲潮流女式卫衣">2020春季新款时尚舒适百搭个性字母休闲潮流女式卫衣</h3>
                     <p>舒适百搭 个性字母<span>收藏</span></p>
                     <div class="price-box">
@@ -1946,7 +1946,7 @@
                         <div>
                             <del>￥279</del> 2.2折
                         </div>
-                    </div>
+                    </div> -->
                     <div class="J-cartAdd-frm">
                         <dl>
                             <dt>配送</dt>
@@ -1979,10 +1979,10 @@
                         </P>
                         <dl class="i-num">
                             <dt>数量</dt>
-                            <p><i>-</i><em>1</em><i>+</i></p>
+                            <p><i class="oMinus">-</i><em class="num">1</em><i class="oAdd">+</i></p>
                         </dl>
                         <dl>
-                            <button><span class="iconfont icon-bao"></span>加入购物车</button>
+                            <a class="abtn"><span class="iconfont icon-bao"></span>加入购物车</a>
                         </dl>
                     </div>
                     <div class="other-form-box">
@@ -2160,7 +2160,64 @@
 
 
 
+    <script src="libs/jquery-1.11.0.js"></script>
+    <script>
+        $(function() {
+            $('.upxxx').click(() => {
+                $('html,body').stop().animate({
+                    'scrollTop': 0
+                })
+            })
+            var num = 1;
+            $('.oMinus').click(function() {
+                num < 2 ? num = 1 : num--;
+                $('.num').empty().append(num);
+            })
+            $('.oAdd').click(function() {
+                num++;
+                $('.num').empty().append(num);
+            })
 
+            var id = location.search[1];
+            console.log(id)
+
+            $.get("http://jx.xuzhixiang.top/ap/api/productlist.php", {
+                uid: "33169"
+            }).then(data => {
+                data = data.data;
+                console.log(data)
+                $('.fw-l').prepend(
+                    `
+                        <img src="${data[id].pimg}" alt="">
+                        `
+                )
+                $('.fw-r').prepend(
+                    `
+                    <a href="javascript:;">左岸</a>
+                    <h3 title="${data[id].pdesc}">${data[id].pdesc}</h3>
+                    <p>舒适百搭 个性字母<span>收藏</span></p>
+                    <div class="price-box">
+                        <i>￥</i>
+                        <p title="59">59</p>
+                        <div>
+                            <del>￥${data[id].pprice}</del> 2.2折
+                        </div>
+                    </div>
+                    `
+                )
+                $('.abtn').click(function() {
+                    $.get("http://jx.xuzhixiang.top/ap/api/add-product.php", {
+                        uid: "33169",
+                        pid: data[id].pid,
+                        pnum: num
+                    }).then(data => {
+                        location.href = "cart.html";
+                    })
+                })
+
+            })
+        });
+    </script>
 
 
 

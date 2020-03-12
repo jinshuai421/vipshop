@@ -34,9 +34,9 @@
                         <div>
                             <div class="ckg-box">
                                 <i></i>
-                                <input type="text" placeholder="请输入手机号码">
-                                <span class="iconfont icon-zhengque"></span>
-                                <span class="iconfont icon-cuowu"></span>
+                                <input type="text" placeholder="请输入手机号码" class="username">
+                                <span class="iconfont icon-zhengque zhengque"></span>
+                                <span class="iconfont icon-cuowu cuowu"></span>
                             </div>
                             <span>请输入正确的手机号码</span>
                         </div>
@@ -44,8 +44,8 @@
                             <div class="ckg-box ckg-code">
                                 <i class="ckg-fontb"></i>
                                 <input type="text" class="code" placeholder="请输入验证码">
-                                <span class="iconfont icon-zhengque"></span>
-                                <span class="iconfont icon-cuowu"></span>
+                                <span class="iconfont icon-zhengque zhengque"></span>
+                                <span class="iconfont icon-cuowu cuowu"></span>
                             </div>
                             <!-- 验证码按钮  .btn-code-off未开启按钮时   .btn-code-on开启按钮时-->
                             <button type="button" class="btn-code-off">获取验证码</button>
@@ -54,9 +54,9 @@
                         <div>
                             <div class="ckg-box">
                                 <i class="ckg-fontc"></i>
-                                <input type="text" placeholder="密码由6-20位字母，数字和符号组合">
-                                <span class="iconfont icon-zhengque"></span>
-                                <span class="iconfont icon-cuowu"></span>
+                                <input type="text" placeholder="密码由6-20位字母，数字和符号组合" class="password">
+                                <span class="iconfont icon-zhengque zhengque"></span>
+                                <span class="iconfont icon-cuowu  cuowu"></span>
                             </div>
                             <aside></aside><span>密码中包含非法字符</span>
                         </div>
@@ -64,8 +64,8 @@
                             <div class="ckg-box">
                                 <i class="ckg-fontd"></i>
                                 <input type="text" placeholder="请再次输入上面的密码">
-                                <span class="iconfont icon-zhengque"></span>
-                                <span class="iconfont icon-cuowu"></span>
+                                <span class="iconfont icon-zhengque zhengque"></span>
+                                <span class="iconfont icon-cuowu cuowu"></span>
                             </div>
                             <span>请输入确认密码</span>
                         </div>
@@ -80,7 +80,7 @@
                             <span>接受服务条款才能注册</span>
                         </div>
                         <!-- 注册按钮 -->
-                        <button>立即注册</button>
+                        <input type="button" id="btn" value="立即注册" />
                     </form>
                 </div>
             </section>
@@ -89,6 +89,49 @@
 
     <!-- footer -->
     <footer>Copyright 2008-2020 vip.com，All Rights Reserved ICP证：粤 B2-20080329</footer>
+
+    <script src="libs/jquery-1.11.0.js"></script>
+    <script>
+        $(function() {
+            $("#btn").click(function() {
+                console.log($(".btn"))
+                $.get(
+                    "http://jx.xuzhixiang.top/ap/api/checkname.php", {
+                        username: $(".username").val()
+                    },
+                    data => {
+                        if (data.code == 1) {
+                            $.get(
+                                "http://jx.xuzhixiang.top/ap/api/reg.php", {
+                                    username: $(".username").val(),
+                                    password: $(".password").val()
+                                },
+                                data => {
+                                    if (data.code == 1) {
+                                        location.href = "login.html";
+                                    }
+                                }
+                            );
+                            $('.zhengque').css({
+                                'display': 'inline-block'
+                            })
+                            $('.cuowu').css({
+                                'display': 'none'
+                            })
+                        } else {
+                            //用户名不可用
+                            $('.cuowu').css({
+                                'display': 'inline-block'
+                            })
+                            $('.zhengque').css({
+                                'display': 'none'
+                            })
+                        }
+                    }
+                );
+            });
+        })
+    </script>
 </body>
 
 </html>
