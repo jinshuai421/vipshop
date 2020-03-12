@@ -132,15 +132,21 @@
                 <!-- 搜索 -->
                 <div class="search">
                     <form action="" name="" method="">
-                        <input type="text" placeholder="王牌爆款 巅峰让利">
+                        <input type="text" placeholder="王牌爆款 巅峰让利" class="clicko">
                         <a href="category.html"><i></i></a>
                         <!-- 点击时事件 -->
-                        <div class="btn-click" style="display: none;">
+                        <div class="btn-click" style="display: none;z-index: 1000; ">
                             <div>
                                 <p>搜索历史
                                     <a href="###" title="清除搜索历史"></a>
                                 </p>
                                 <ul class="l-hover">
+                                    <li>
+                                        <a href="javascript:;">比如啦啦啦</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">比如啦啦啦</a>
+                                    </li>
                                     <li>
                                         <a href="javascript:;">比如啦啦啦</a>
                                     </li>
@@ -151,6 +157,15 @@
                                 <ul>
                                     <li>
                                         <a href="javascript:;">比如啦啦啦</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">比如啦啦啦</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">比如啦啦啦</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">比如</a>
                                     </li>
                                     <li>
                                         <a href="javascript:;">比如</a>
@@ -4332,7 +4347,18 @@
     </div>
 
     <script src="../dist/libs/jquery-1.11.0.js"></script>
-    <!-- <script src="../dist/js/index.js"></script> -->
+    <script src="../dist/js/index.js"></script>
+    <script src="../dist/js/form.js"></script>
+    <script>
+        $(function() {
+            $('.clicko').click(function() {
+                $('.btn-click').show()
+            })
+            $('.btn-click>div').mouseout(function() {
+                $('.btn-click').hide();
+            })
+        })
+    </script>
 </body>
 
 </html>

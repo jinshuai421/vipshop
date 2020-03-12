@@ -2356,12 +2356,6 @@
         // });
 
         $(function() {
-            $('.upxxx').click(() => {
-                $('html,body').stop().animate({
-                    'scrollTop': 0
-                })
-            })
-
             $.get("http://jx.xuzhixiang.top/ap/api/productlist.php", {
                 uid: "33169"
             }).then(data => {

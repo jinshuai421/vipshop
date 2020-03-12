@@ -82,7 +82,6 @@ $(function() {
     });
 
     $('.index-nav-wrap a').click(function() {
-
         $(this).addClass('nav-reap-on').siblings().removeClass('nav-reap-on');
     })
 
