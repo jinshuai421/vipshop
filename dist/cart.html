@@ -289,7 +289,7 @@
                     console.log(data)
 
                     for (let i in data) {
-                        $('.orders-bd').append(
+                        $('.orders-bd').html(
                             `
                         <div class="product-item" ">
                             <div class="m-product">
@@ -313,13 +313,11 @@
                     del();
                     add();
                     numadd();
-
                 });
-
             }
-            let singles = 0;
 
             function add() {
+                let singles = 0;
                 $('.add').each(function(i) {
                     singles += parseFloat($('.add').eq(i).children('em').html());
                 })
@@ -335,10 +333,10 @@
                         pid: $(this).data('id'),
                         pnum: this.num
                     }).then(data => {
-
+                        $(this).siblings('.num').html(this.num);
+                        add();
+                        show()
                     });
-                    $(this).siblings('.num').html(this.num);
-                    add();
                 })
                 $('.oAdd').click(function() {
                     this.num = $(this).siblings('.num').html();
@@ -348,10 +346,11 @@
                         pid: $(this).data('id'),
                         pnum: this.num
                     }).then(data => {
+                        $(this).siblings('.num').html(this.num);
+                        add();
+                        show()
 
                     });
-                    $(this).siblings('.num').html(this.num);
-                    add();
                 })
             }
 
