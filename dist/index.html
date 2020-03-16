@@ -135,7 +135,7 @@
                         <input type="text" placeholder="王牌爆款 巅峰让利" class="clicko">
                         <a href="category.html"><i></i></a>
                         <!-- 点击时事件 -->
-                        <div class="btn-click" style="display: none;z-index: 1000; ">
+                        <div class="btn-click" style="display: none;z-index: 100; ">
                             <div>
                                 <p>搜索历史
                                     <a href="###" title="清除搜索历史"></a>
@@ -4353,6 +4353,9 @@
         $(function() {
             $('.clicko').click(function() {
                 $('.btn-click').show()
+            })
+            $('.btn-click>div').mouseover(function() {
+                $('.btn-click').show();
             })
             $('.btn-click>div').mouseout(function() {
                 $('.btn-click').hide();

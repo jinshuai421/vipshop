@@ -2364,8 +2364,8 @@
                 for (let i = 0; i < 10; i++) {
 
                     $('.li').append(`
-                        <div>
-                                <img src="${data[i].pimg}" alt="">
+                        <a href="detail.html?${i}">
+                            <img src="${data[i].pimg}" alt="">
                             <aside>
                                 <p>
                                     <em>快枪价</em>￥
@@ -2375,8 +2375,8 @@
                             <div class="txt">
                                 <del>¥498</del>${data[i].pname}
                             </div>
-                            <a href="detail.html?${i}" title="${data[i].pdesc}">${data[i].pdesc}</a>
-                        </div>
+                            <p" title="${data[i].pdesc}">${data[i].pdesc}</p>
+                        </a>
                     `)
                 }
             });
@@ -2384,9 +2384,21 @@
 
             // 更多选项按钮
             $('.f-btn').click(function() {
-                $('.filter').stop().animate({
-                    'height': '686px'
-                });
+                let fb = $('.filter').css('height');
+                if (fb == '250px') {
+                    $('.filter').stop().animate({
+                        'height': '686px'
+                    });
+                    $('.f-btn').html(`收起选项
+                <span class="iconfont icon-up21"></span>`);
+
+                } else {
+                    $('.filter').stop().animate({
+                        'height': '250px'
+                    });
+                    $('.f-btn').html(`更多选项
+                <span class="iconfont icon-up2"></span>`);
+                }
             })
         })
     </script>

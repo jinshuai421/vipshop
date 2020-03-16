@@ -312,7 +312,7 @@ background-color .3s cubic-bezier(.39, .575, .565, 1);
             width: 1192px;
             margin-top: -10px;
             margin-left: -10px;
-            >div {
+            >a {
                 width: 238px;
                 height: 442px;
                 padding: 10px;
@@ -320,6 +320,7 @@ background-color .3s cubic-bezier(.39, .575, .565, 1);
                 background-color: #fff;
                 border: 1px solid transparent;
                 position: relative;
+                display: block;
                 &:hover {
                     border-color: #e5e5e5;
                     box-shadow: 0 0 6px rgba(0, 0, 0, .1);
@@ -371,7 +372,7 @@ background-color .3s cubic-bezier(.39, .575, .565, 1);
                         text-decoration: line-through;
                     }
                 }
-                >a:last-of-type {
+                >p:last-of-type {
                     width: 218px;
                     height: 36px;
                     overflow: hidden;

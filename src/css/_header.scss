@@ -479,6 +479,9 @@
                     }
                     // 点击输入框时
                     .btn-click {
+                        &:hover {
+                            display: block;
+                        }
                         >div {
                             width: 170px;
                             float: left;
